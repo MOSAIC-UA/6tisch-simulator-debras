@@ -470,7 +470,8 @@ class Mote(object):
                         
                         if mote == self.preferredParent:                      
                             # switch preferred parent only when rank difference is large enough
-                            if rank-newrank<self.RPL_PARENT_SWITCH_THRESHOLD:
+                            #bug. This has to be >
+                            if rank-newrank>self.RPL_PARENT_SWITCH_THRESHOLD:
                                 (newPreferredParent,newrank) = (mote,rank)
                                 
                             
